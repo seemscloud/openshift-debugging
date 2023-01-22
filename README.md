@@ -1,6 +1,8 @@
 # Openshfit Debugging
 
-## After Installation / Upgrade
+## Install Status
+
+### General
 
 ```bash
 oc get clusterversion
@@ -16,10 +18,19 @@ oc get clusteroperators.config.openshift.io
 oc adm must-gather
 ```
 
+### API Resources
+
 ```bash
 oc get api-resources
 
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
+```
+
+### Ignition Files
+
+```bash
+oc get machineconfigpools
+oc get machineconfig
 ```
 
 ## Openshift Ingress
