@@ -3,6 +3,10 @@
 ## After Installation / Upgrade
 
 ```bash
+oc get api-resources
+```
+
+```bash
 oc get clusterversion
 
 oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
