@@ -2,7 +2,7 @@
 
 ## Install Status
 
-### General
+#### General
 
 ```bash
 oc get clusterversion
@@ -18,7 +18,7 @@ oc get clusteroperators.config.openshift.io
 oc adm must-gather
 ```
 
-### API Resources
+#### API Resources
 
 ```bash
 oc get api-resources
@@ -26,7 +26,7 @@ oc get api-resources
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
 
-### Ignition Files
+#### Ignition Files
 
 ```bash
 oc get machineconfigpools
