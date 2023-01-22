@@ -22,6 +22,10 @@ oc api-resources
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
 
+```bash
+oc projects --loglevel=8
+```
+
 #### Gahter Logs
 
 ```bash
