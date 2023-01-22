@@ -22,7 +22,7 @@ oc api-resources
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
 
-### Gahter Logs
+#### Gahter Logs
 
 ```bash
 oc adm must-gather
