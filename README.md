@@ -9,7 +9,7 @@ oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
 ```
 
 ```bash
-oc get clusteroperators
+oc get clusteroperators.config.openshift.io
 ```
 
 ```bash
