@@ -1,4 +1,12 @@
-# Openshift Ingress
+# Openshfit Debugging
+
+## After Installation / Upgrade
+
+```bash
+oc get clusterversion
+```
+
+## Openshift Ingress
 
 ```bash
 kubectl get ingresscontrollers \
