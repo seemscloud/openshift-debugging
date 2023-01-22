@@ -7,17 +7,15 @@
 ```bash
 oc get clusterversion
 
-oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
-```
-
-```bash
 oc get clusteroperators.config.openshift.io
 
-oc get clusteroperators.config.openshift.io openshift-apiserver -o yaml | grep "not ready" -A1
+oc api-resources
 ```
 
 ```bash
-oc api-resources
+oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
+
+oc get clusteroperators.config.openshift.io openshift-apiserver -o yaml | grep "not ready" -A1
 
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
