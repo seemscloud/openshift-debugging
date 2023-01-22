@@ -3,10 +3,6 @@
 ## After Installation / Upgrade
 
 ```bash
-oc get api-resources
-```
-
-```bash
 oc get clusterversion
 
 oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
@@ -18,6 +14,12 @@ oc get clusteroperators
 
 ```bash
 oc adm must-gather
+```
+
+```bash
+oc get api-resources
+
+oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
 
 ## Openshift Ingress
