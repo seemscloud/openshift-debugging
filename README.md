@@ -21,7 +21,7 @@ oc adm must-gather
 #### API Resources
 
 ```bash
-oc get api-resources
+oc api-resources
 
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
 ```
