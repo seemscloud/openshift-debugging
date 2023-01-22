@@ -14,16 +14,29 @@ oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
 oc get clusteroperators.config.openshift.io
 ```
 
-```bash
-oc adm must-gather
-```
-
 #### API Resources
 
 ```bash
 oc api-resources
 
 oc api-resources 2>&1  | grep -Ei "error.*" | grep -Po "[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*/[a-zA-Z0-9]*"
+```
+
+### Gahter Logs
+
+```bash
+oc adm must-gather
+```
+
+```bash
+openshift-install gather bootstrap --dir install_dir/
+
+openshift-install gather bootstrap \
+  --dir install_dir/ \
+  --bootstrap bootstrap-0.seems.cloud \
+  --master master-0.seems.cloud \
+  --master master-0.seems.cloud \
+  --master master-0.seems.cloud
 ```
 
 #### Ignition Files
