@@ -8,6 +8,10 @@ oc get clusterversion
 oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
 ```
 
+```bash
+oc get clusteroperators
+```
+
 ## Openshift Ingress
 
 ```bash
