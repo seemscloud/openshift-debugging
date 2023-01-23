@@ -13,7 +13,7 @@ oc get clusterversion -o json | jq -r '.items[].status.conditions[]'
 ```bash
 oc get clusteroperators.config.openshift.io
 
-oc get clusteroperators.config.openshift.io openshift-apiserver -o yaml | grep "not ready" -A 1
+oc get clusteroperators.config.openshift.io openshift-apiserver -o yaml | grep "not ready"
 ```
 
 ```bash
