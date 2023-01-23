@@ -43,7 +43,7 @@ openshift-install gather bootstrap \
   --master master-0.seems.cloud
 ```
 
-#### `htpasswd` Provider Auth
+#### Auth via `htpasswd` Provider
 
 ```
 htpasswd -c -B -b users.htpasswd testuser testpassword
