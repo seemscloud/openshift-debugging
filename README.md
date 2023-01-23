@@ -43,7 +43,14 @@ openshift-install gather bootstrap \
   --master master-0.seems.cloud
 ```
 
-#### Auth via `htpasswd` Provider
+#### Ignition Files
+
+```bash
+oc get machineconfigpools
+oc get machineconfig
+```
+
+## Auth via `htpasswd` Provider
 
 ```
 htpasswd -c -B -b users.htpasswd testuser testpassword
@@ -66,13 +73,6 @@ spec:
       fileData:
         name: htpass-secret
 EndOfMessage
-```
-
-#### Ignition Files
-
-```bash
-oc get machineconfigpools
-oc get machineconfig
 ```
 
 ## Openshift Ingress
