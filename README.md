@@ -43,6 +43,31 @@ openshift-install gather bootstrap \
   --master master-0.seems.cloud
 ```
 
+#### htpasswd Auth
+
+```
+htpasswd -c -B -b users.htpasswd testuser testpassword
+
+oc create secret generic htpass-secret \
+  -n openshift-config \
+  --from-file=htpasswd=users.htpasswd
+
+oc apply -f - << EndOfMessage
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: htpasswd_provider 
+    mappingMethod: claim 
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: htpass-secret
+EndOfMessage
+```
+
 #### Ignition Files
 
 ```bash
